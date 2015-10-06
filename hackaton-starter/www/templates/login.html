@@ -1,0 +1,20 @@
+<ion-view title="Login" class="background-login">
+  <ion-content padding="true" class="has-header">
+    <form>
+      <ion-list>
+        <label class="item item-input">
+          <span class="input-label">Username:</span>
+          <input type="text" placeholder="" ng-model="model.username">
+        </label>
+
+        <label class="item item-input" style="margin-top: 20px">
+          <span class="input-label">Password:</span>
+          <input type="password" placeholder="" ng-model="model.password">
+        </label>
+      </ion-list>
+      <div class="spacer" style="height: 40px;"></div>
+      <button ng-click="login()" class="button button-assertive button-block">Log in</button>
+      <a href="#/signup" class="button button-assertive button-clear button-block ">Or create an account</a>
+    </form>
+  </ion-content>
+</ion-view>
