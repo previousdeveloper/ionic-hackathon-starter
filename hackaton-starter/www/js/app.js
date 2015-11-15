@@ -1,10 +1,11 @@
 angular.module('starter', [
-  'ionic',
-  'starter.controllers',
-  'starter.services',
-  'LocalStorageModule'
+    'ionic',
+    'starter.controllers',
+    'starter.services',
+    'LocalStorageModule',
+    'ngCordova'
 
-])
+  ])
 
   .run(function ($ionicPlatform) {
     $ionicPlatform.ready(function () {

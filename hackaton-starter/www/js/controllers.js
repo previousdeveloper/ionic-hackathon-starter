@@ -34,13 +34,6 @@ angular.module('starter.controllers', [])
 
         if ($scope.model.username === username && $scope.model.password === password) {
 
-          var alertPopup = $ionicPopup.alert({
-            title: 'Yonlendirme',
-            template: 'Yonlendirme'
-          });
-          alertPopup.then(function (res) {
-            console.log('Thank you for not eating my delicious ice cream cone');
-          });
 
           $location.path('/tab/account')
         }
@@ -55,8 +48,17 @@ angular.module('starter.controllers', [])
   }])
 
 
-  .controller('AccountCtrl', function ($scope) {
-    $scope.settings = {
-      enableFriends: true
-    };
+  .controller('AccountCtrl', function ($scope, $cordovaContacts) {
+
+    init();
+
+
+    function init() {
+      $cordovaContacts.find({filter: ''}).then(function (result) {
+        $scope.contacts = result;
+        $scope.loadingBar = true;
+      }, function (error) {
+        console.log("ERROR: " + error);
+      });
+    }
   });
